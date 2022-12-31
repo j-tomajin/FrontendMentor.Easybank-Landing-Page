@@ -4,25 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   
-  <title>Frontend Mentor | Easybank landing page</title>
+  <title>Easybank</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./dist/style.css">
+
+  <!-- JAVASCRIPT -->
+  <script src="./js/app.js" defer></script>
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="header header--display">
+    <div class="header__container header__container--display header__container--position">
+      <div class="nav__logo">
+        <img src="./images/logo.svg" alt="easybank logo">
+      </div>
 
-  Home
-  About
-  Contact
-  Blog
-  Careers
+      <!-- Navigation img -->
+      <button class="header__hamburger" onclick="navToggle()">
+        <img src="./images/icon-hamburger.svg" alt="menu" class="hamburger">
+      </button>
 
-  Request Invite
+      <!-- Navigation Menu -->
+      <nav class="header__nav">
+        <ul>
+          <li class="header__nav--item"><a href="#" class="header__nav--link">Home</a></li>
+          <li class="header__nav--item"><a href="#" class="header__nav--link">About</a></li>
+          <li class="header__nav--item"><a href="#" class="header__nav--link">Contact</a></li>
+          <li class="header__nav--item"><a href="#" class="header__nav--link">Blog</a></li>
+          <li class="header__nav--item"><a href="#" class="header__nav--link">Careers</a></li>
+        </ul>
+
+        <a href="#" class="header__link--request">Request Invite</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  
+  
+  
+  
+
+  
 
 
 
