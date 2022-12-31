@@ -1,3 +1,28 @@
+@use '../utils/fonts' as font;
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
-@use '../utils/fonts' as font;
+@use '../utils/mixins' as m;
+
+/* UTILITY CLASSES */
+%width {
+    width: min(calc(100% - 3rem), f.rem(1110));
+    margin-inline: auto;
+}
+
+%link-request {
+    @include m.text-style(700, var(--clr-neutral-white));
+    background: {
+        image: var(--primary-gradient);
+    };
+    padding: {
+        block: f.rem(16);
+        inline: f.rem(32);
+    };
+    border-radius: f.rem(50);
+
+    &:hover {
+        background: {
+            image: var(--primary-gradient-hover);
+        };
+    }
+}
