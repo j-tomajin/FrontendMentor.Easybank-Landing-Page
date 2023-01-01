@@ -109,10 +109,6 @@ a, a:focus, a:visited {
   background-image: var(--primary-gradient-hover);
 }
 
-body {
-  background-color: gray;
-}
-
 /* HEADER */
 .header {
   width: 100%;
@@ -167,6 +163,7 @@ body {
   transform: translateY(0);
   visibility: visible;
   opacity: 1;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 100px 100px 100px inset, rgba(50, 50, 93, 0.25) 0px 200px 100px 50px, rgba(0, 0, 0, 0.3) 0px 50px 40px 40px;
 }
 @media (max-width: 48.74875em) {
   .header__link--request {
@@ -207,12 +204,17 @@ body {
 
 /* POSITION */
 /* HEADER POSITION */
+.header {
+  position: relative;
+  z-index: 1;
+}
 .header__container--position {
   position: relative;
 }
 .header__nav {
   position: absolute;
   bottom: -280px;
+  z-index: -1;
 }
 @media (min-width: 48.75em) {
   .header__nav {
