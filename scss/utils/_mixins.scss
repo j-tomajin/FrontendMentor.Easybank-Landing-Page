@@ -1,0 +1,9 @@
+// MIXINS
+@use 'fonts' as font;
+
+// text style
+@mixin text-style($fw, $color) {
+    font-weight: $fw;
+    font-family: font.$public-sans;
+    color: $color;
+}
