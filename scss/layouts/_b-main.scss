@@ -1,3 +1,106 @@
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
+@use '../utils/mixins' as m;
+@use '0-global' as *;
+
 /* MAIN */
+.hero {
+    background-color: var(--clr-neutral-vl-gray);
+    padding: {
+        block: 0 5.3125rem;
+        block: clamp(0rem, -7.74rem + 33.03vw, 11.25rem) clamp(5.3125rem, 1.66rem + 15.6vw, 10.625rem);
+    };
+
+    // hero img
+    &__img {
+        overflow-x: hidden;
+        width: 100%;
+        margin-top: -20%;
+
+        img {
+            margin-inline: auto;
+            margin-top: -20%;
+        }
+
+        background: {
+            image: url('../images/bg-intro-mobile.svg');
+            repeat: no-repeat;
+            size: contain;
+            position-x: center; 
+        };
+
+        @include bp.breakpointMin(xlarge-screen) {
+            width: f.rem(855);
+            margin: {
+                top: 0
+            };
+
+            img {
+                margin: {
+                    top: 0;
+                    right: -15%;
+                };
+            };
+
+            background: {
+                image: url('../images/bg-intro-desktop.svg');
+                repeat: no-repeat;
+                size: cover;
+                position-y: 0px;
+                position-x: 20px; 
+            };
+        }
+    }
+
+    .content {
+        @extend %width;
+    }
+
+    // hero content
+    &__content {
+        @extend %text-align;
+        width: min(100%, f.rem(430));
+        margin: {
+            inline: auto;
+            bottom: 5.3125rem;
+            bottom: clamp(5.3125rem, 1.66rem + 15.6vw, 10.625rem);
+        };
+
+        &--head {
+            @include m.text-style(700, var(--clr-neutral-d-blue));
+            font-size: f.rem(38);
+            line-height: 1.2;
+            margin-bottom: f.rem(24);
+        }
+
+        &--sub {
+            @include m.text-style(300, var(--clr-neutral-g-blue));
+            margin: {
+                bottom: f.rem(32);
+            };
+        }
+
+        @include bp.breakpointMin(xlarge-screen) {
+            margin: {
+                inline: 0 auto;
+                // inline-start: 0;
+                // inline-end: auto;
+            };
+
+            &--head {
+                margin: {
+                    bottom: f.rem(44);
+                };
+            }
+
+            &--sub {
+                margin: {
+                    bottom: f.rem(44);
+                };
+            }
+        }
+    }
+    &__link {
+        @extend %link-request;
+    }
+}
