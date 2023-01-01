@@ -16,9 +16,20 @@
         z-index: -1;
     }
 
-    @include bp.breakpointMin(medium-screen) {
+    @include bp.breakpointMin(large-screen) {
         &__nav {
             position: unset;
+        }
+    }
+}
+
+/* HERO */
+.hero {
+
+    &__img {
+
+        @include bp.breakpointMin(xlarge-screen) {
+            position: absolute;
         }
     }
 }
