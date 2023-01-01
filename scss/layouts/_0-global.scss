@@ -5,8 +5,16 @@
 
 /* UTILITY CLASSES */
 %width {
-    width: min(calc(100% - 3rem), f.rem(1110));
+    width: min(calc(100% - 3rem), f.rem(1150));
     margin-inline: auto;
+}
+
+%text-align {
+    text-align: center;
+
+    @include bp.breakpointMin(large-screen) {
+        text-align: left;
+    }
 }
 
 %link-request {
