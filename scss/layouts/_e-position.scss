@@ -1,3 +1,24 @@
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
 /* POSITION */
+/* HEADER POSITION */
+.header {
+    position: relative;
+    z-index: 1;
+
+    &__container--position {
+        position: relative;
+    }
+
+    &__nav {
+        position: absolute;
+        bottom: -280px;
+        z-index: -1;
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        &__nav {
+            position: unset;
+        }
+    }
+}
