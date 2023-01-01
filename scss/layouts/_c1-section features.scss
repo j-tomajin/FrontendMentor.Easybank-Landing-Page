@@ -1,0 +1,72 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+@use '../utils/mixins' as m;
+@use '0-global' as *;
+
+/* SECTION */
+/* FEATURES */
+.features {
+    background-color: var(--clr-neutral-lg-blue);
+
+    &__container {
+        @extend %width;
+        @extend %text-align;
+    }
+
+    padding: {
+        block: 6.875rem 9.375rem;
+        block: clamp(4.0625rem, 1.53rem + 10.8vw, 11.25rem) clamp(9.375rem, 7.01rem + 10.09vw, 12.8125rem);
+    };
+
+    // features content
+    &__content {
+        width: min(100%, f.rem(650));
+        margin: {
+            bottom: f.rem(58);
+        };
+
+        &--head {
+            @include m.text-style(700, var(--clr-neutral-d-blue));
+            font-size: f.rem(32);
+            line-height: 1.2;
+            margin-bottom: f.rem(24);
+        }
+
+        &--sub {
+            @include m.text-style(300, var(--clr-neutral-g-blue));
+        }
+    }
+
+    // features lists
+    &__list {
+
+        &--img {
+            img {
+                margin: {
+                    inline: auto;
+                };
+
+                @include bp.breakpointMin(large-screen) {
+                    margin: {
+                        inline: unset;
+                    };
+                }
+            }
+        }
+
+        &--title {
+            @include m.text-style(400, var(--clr-neutral-d-blue));
+            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 1.41rem + 0.37vw, 1.625rem);
+        }
+
+        &--desc {
+            @include m.text-style(300, var(--clr-neutral-g-blue));
+        }
+
+        // breakpoint 920px
+        @include bp.breakpointMin(large-screen) {
+            max-width: f.rem(300);
+        }
+    }
+}
