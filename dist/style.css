@@ -437,12 +437,6 @@ a, a:focus, a:visited {
   gap: clamp(0.75rem, 0.58rem + 0.73vw, 1rem);
 }
 
-.hero__container,
-.features,
-.article {
-  display: none;
-}
-
 /* POSITION */
 /* HEADER POSITION */
 .header {
