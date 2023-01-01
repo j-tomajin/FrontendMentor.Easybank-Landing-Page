@@ -17,7 +17,7 @@
     &__hamburger {
         background-color: transparent;
 
-        @include bp.breakpointMin(medium-screen) {
+        @include bp.breakpointMin(large-screen) {
             display: none;
         }
     }
@@ -45,12 +45,12 @@
         &--link {
             @include m.text-style(400, var(--clr-primary-d-blue));
 
-            @include bp.breakpointMin(medium-screen) {
+            @include bp.breakpointMin(large-screen) {
                 color: var(--clr-neutral-g-blue);
             }
         }
 
-        @include bp.breakpointMin(medium-screen) {
+        @include bp.breakpointMin(large-screen) {
             padding: 0;
 
             transform: translateY(0);
@@ -76,13 +76,17 @@
         box-shadow: rgba(255, 255, 255, 0.1) 0px 100px 100px 100px inset,
                     rgba(50, 50, 93, 0.25) 0px 200px 100px 50px, 
                     rgba(0, 0, 0, 0.3) 0px 50px 40px 40px;
+        
+        @include bp.breakpointMin(large-screen) {
+            box-shadow: none;
+        }
     }
 
     // request invite link
     &__link--request {
         @extend %link-request;
 
-        @include bp.breakpointMax(medium-screen) {
+        @include bp.breakpointMax(large-screen) {
             display: none;
         }
     }
