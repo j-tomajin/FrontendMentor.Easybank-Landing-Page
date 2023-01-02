@@ -39,14 +39,20 @@
         &--item {
             &:not(:last-child) {
                 margin-bottom: f.rem(16);
-            }
+            }   
         }
 
         &--link {
             @include m.text-style(400, var(--clr-primary-d-blue));
-
+            font-size: m.clampf(16, 920, 18);
+            
             @include bp.breakpointMin(large-screen) {
                 color: var(--clr-neutral-g-blue);
+                transition: color .4s ease-in;
+
+                &:hover {
+                    color: var(--clr-primary-d-blue);
+                }
             }
         }
 
@@ -83,11 +89,10 @@
     }
 
     // request invite link
-    &__link--request {
-        @extend %link-request;
-
+    &__link {
         @include bp.breakpointMax(large-screen) {
             display: none;
         }
+        @extend %link-request;
     }
 }
