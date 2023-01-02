@@ -15,7 +15,7 @@
 }
 
 // clamp
-// parameter/value: min-size, max-viewport-width, max-size
+// parameter/value: min-size, max-viewport-width/prefered value, max-size
 // e.g: font-size: m.clampf(16, 920, 32);
 // e.g: padding: m.clampf(24, 1440, 38);
 @function clampf($minSize, $maxWidth, $maxSize) {
