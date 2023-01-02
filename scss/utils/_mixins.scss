@@ -15,12 +15,13 @@
 }
 
 // clamp
-// value: min-size, max-viewport-width, max-size
+// parameter/value: min-size, max-viewport-width, max-size
 // e.g: font-size: m.clampf(16, 920, 32);
 // e.g: padding: m.clampf(24, 1440, 38);
 @function clampf($minSize, $maxWidth, $maxSize) {
     $minWidth: 375;
 
+    // prefered value
     $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
     $yAxis: -$minWidth * $slope + $minSize;
     $slopeE: ($slope * 100) + vw;
