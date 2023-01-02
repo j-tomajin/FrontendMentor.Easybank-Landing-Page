@@ -16,8 +16,8 @@
 
 // clamp
 // value: min-size, max-viewport-width, max-size
-// e.g: font-size: m.clamp(16, 920, 32);
-// e.g: padding: m.clamp(24, 1440, 38);
+// e.g: font-size: m.clampf(16, 920, 32);
+// e.g: padding: m.clampf(24, 1440, 38);
 @function clampf($minSize, $maxWidth, $maxSize) {
     $minWidth: 375;
 
@@ -28,7 +28,6 @@
     @if math.is-unitless($maxSize) and math.is-unitless($minSize) and math.is-unitless($maxWidth) {
         @if $minSize > $maxSize {
             @return clamp(f.rem($maxSize), f.rem($yAxis) + $slopeE, f.rem($minSize));
-
         } @else {
             @return clamp(f.rem($minSize), f.rem($yAxis) + $slopeE, f.rem($maxSize));
         }
