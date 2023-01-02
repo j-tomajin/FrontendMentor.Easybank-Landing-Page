@@ -1,11 +1,82 @@
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
+@use '../utils/mixins' as m;
+@use '0-global' as *;
 /* FOOTER */
 
-footer {
+.footer {
     margin-top: auto;
-}
+    background-color: var(--clr-primary-d-blue);
 
+    // footer container
+    &__container {
+        @extend %width;
+        @extend %text-align;
+        padding: {
+            block-start: m.clampf(36, 920, 48);
+            block-end: m.clampf(42, 920, 48);
+        };
+    }
+
+    // footer head
+    // logo and socials
+    &__head {
+        &--logo {
+            svg {
+                margin: {
+                  inline: auto;  
+                }
+            }
+        }
+        &--socials {
+            a {
+                @extend %hover;
+                color: var(--clr-neutral-white);
+                font-size: m.clampf(24, 920, 28);
+
+                &:hover {
+                    transform: translateY(f.rem(-8));
+                }
+            }
+        }
+    }
+    
+    // footer nav
+    &__nav {
+        &--item {
+            transition: .3s ease;
+            width: fit-content;
+            
+            a {
+                @extend %hover;
+                @include m.text-style(400, var(--clr-neutral-white));
+            }
+            
+            &:hover {
+                transform: translateX(f.rem(8));
+            }
+            
+            &:not(:last-child) {
+                margin: {
+                    block-end: m.clampf(16, 920, 22);
+                };
+            }
+        }
+    }
+
+    // footer bottom
+    &__bottom {
+        &--copyright {
+            @include m.text-style(400, var(--clr-neutral-g-blue));
+        }
+        @include bp.breakpointMin(mlarge-screen) {
+            margin-left: auto;
+        }
+    } // footer bottom link
+    &__link {
+        @extend %link-request;
+    }
+}
 
 .attribution { 
     font-size: 11px; 
