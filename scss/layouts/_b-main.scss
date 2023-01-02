@@ -59,7 +59,7 @@
     // hero content
     &__content {
         @extend %text-align;
-        width: min(100%, f.rem(430));
+        width: min(100%, f.rem(700));
         margin: {
             inline: auto;
             bottom: 5.3125rem;
@@ -81,6 +81,7 @@
         }
 
         @include bp.breakpointMin(xlarge-screen) {
+            width: f.rem(430);
             margin: {
                 inline: 0 auto;
                 // inline-start: 0;
