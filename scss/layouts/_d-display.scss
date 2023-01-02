@@ -1,11 +1,11 @@
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
+@use '../utils/mixins' as m;
+@use '0-global' as *;
 /* DISPLAY */
 
 /* HEADER DISPLAY */
 .header {
-    position: absolute;
-
     &__container--display {
         display: flex;
         justify-content: space-between;
@@ -59,7 +59,7 @@
         justify-content: center;
         gap: f.rem(32);
 
-        @include bp.breakpointMin(large-screen) {
+        @include bp.breakpointMin(mlarge-screen) {
             flex-direction: row;
             align-items: unset;
             gap: f.rem(32);
@@ -92,11 +92,57 @@
     }
 }
 
+/* FOOTER DISPLAY */
+.footer {
+
+    &__container--display {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: f.rem(32);
+
+        @include bp.breakpointMin(mlarge-screen) {
+            flex-direction: row;
+            align-items: unset;
+            gap: f.rem(125);
+        }
+    }
+
+    .flex-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // footer head
+    &__head {
+        @extend .flex-group;
+        gap: m.clampf(28, 920, 64);
+
+        &--socials {
+            display: flex;
+            align-items: center;
+            gap: f.rem(16)
+        }
+    }
+
+    // footer nav
+    &__nav {
+        @extend .footer__container--display;
+    }
+
+    // footer bottom
+    &__bottom {
+        @extend .flex-group;
+        gap: m.clampf(28, 920, 40);
+    }
+}
+
 // temp
 // .hero__container,
 // .features,
 // .article
-// .footer
+// // .footer
 //  {
 //     display: none;
 // }
