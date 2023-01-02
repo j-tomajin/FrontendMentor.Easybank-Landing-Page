@@ -67,8 +67,8 @@
         };
 
         &--head {
-            @include m.text-style(700, var(--clr-neutral-d-blue));
-            font-size: f.rem(38);
+            @include m.text-style(400, var(--clr-neutral-d-blue));
+            font-size: m.clampf(32, 920, 48);
             line-height: 1.2;
             margin-bottom: f.rem(24);
         }
