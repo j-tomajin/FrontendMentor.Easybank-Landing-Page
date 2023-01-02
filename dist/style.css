@@ -238,10 +238,10 @@ a, a:focus, a:visited {
   margin-bottom: clamp(5.3125rem, 1.66rem + 15.6vw, 10.625rem);
 }
 .hero__content--head {
-  font-weight: 700;
+  font-weight: 400;
   color: var(--clr-neutral-d-blue);
   font-family: "Public Sans", sans-serif;
-  font-size: 2.375rem;
+  font-size: clamp(2rem, 1.3119266055rem + 2.9357798165vw, 3rem);
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
