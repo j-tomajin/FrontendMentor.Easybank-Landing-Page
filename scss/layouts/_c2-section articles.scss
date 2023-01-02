@@ -49,10 +49,12 @@
 
         // article title
         &--title {
-            @include m.text-style(700, var(--clr-primary-d-blue));
+            @extend %hover;
+            @include m.text-style(400, var(--clr-primary-d-blue));
             font-size: 1rem;
             font-size: clamp(1rem, 0.82rem + 0.73vw, 1.25rem);
             line-height: 1.2;
+            cursor: pointer;
         }
 
         // article description
