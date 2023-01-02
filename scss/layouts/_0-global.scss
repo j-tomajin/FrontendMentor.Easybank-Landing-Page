@@ -12,7 +12,7 @@
 %text-align {
     text-align: center;
 
-    @include bp.breakpointMin(large-screen) {
+    @include bp.breakpointMin(mlarge-screen) {
         text-align: left;
     }
 }
@@ -32,5 +32,13 @@
         background: {
             image: var(--primary-gradient-hover);
         };
+    }
+}
+
+%hover {
+    transition: all .3s ease-in;
+    
+    &:hover {
+        color: var(--clr-primary-l-green);
     }
 }
