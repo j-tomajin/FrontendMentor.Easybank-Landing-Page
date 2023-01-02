@@ -13,12 +13,35 @@
     &__nav {
         position: absolute;
         bottom: -280px;
-        z-index: -1;
     }
 
     @include bp.breakpointMin(large-screen) {
         &__nav {
             position: unset;
+
+            &--link {
+                position: relative;
+
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 5px;
+                    background: {
+                        image: var(--primary-gradient);
+                    };
+                    bottom: -34px;
+                    right: 0;
+                    left: 0;
+                    margin-inline: auto;
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
         }
     }
 }
